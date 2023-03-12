@@ -24,6 +24,10 @@ include_directories(
 )
 
 if(NXDK)
+# additional source files
+set(XBOX_SOURCE_FILES
+ Sources/networking.cpp
+)
 
 # configs
 set(NXDK_NET y)
@@ -43,7 +47,6 @@ add_executable(${PROJECT_NAME}
   Sources/logViewerMenu.cpp
   Sources/menu.cpp
   Sources/networkManager.cpp
-  Sources/networking.cpp
   Sources/renderer.cpp
   Sources/settingsMenu.cpp
   Sources/sntpClient.cpp
@@ -56,6 +59,7 @@ add_executable(${PROJECT_NAME}
   Sources/xbeLauncher.cpp
   Sources/xbeScanner.cpp
   3rdparty/SDL_FontCache/SDL_FontCache.c
+  ${XBOX_SOURCE_FILES}
 )
 
 set_property(TARGET ${PROJECT_NAME} PROPERTY CXX_STANDARD 17)

@@ -11,6 +11,7 @@
 #include <lwip/sockets.h>
 #else
 #include <netdb.h>
+#include <sys/select.h>
 #endif
 
 class ftpServer {
