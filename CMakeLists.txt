@@ -29,8 +29,10 @@ set(XBOX_SOURCE_FILES
  Sources/networking.cpp
 )
 
-# configs
-set(NXDK_NET y)
+# custom configs
+# Set a different xbe title other than executable name
+#set(XBE_TITLE "<EXE_NAME>")
+# Set name of your iso output
 set(GEN_XISO "${PROJECT_NAME}.iso")
 endif()
 
