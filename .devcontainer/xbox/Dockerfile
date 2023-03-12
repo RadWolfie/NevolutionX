@@ -1,4 +1,4 @@
-FROM ghcr.io/xboxdev/nxdk:latest
+FROM ghcr.io/radwolfie/nxdk:latest
 
 # NOTE: curl-dev is require to workaround unknown option failure from libcurl (assumed is old version)
 RUN apk add build-base cmake ninja zip unzip curl-dev curl git
