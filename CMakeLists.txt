@@ -34,6 +34,7 @@ set(XBOX_SOURCE_FILES
 #set(XBE_TITLE "<EXE_NAME>")
 # Set name of your iso output
 set(GEN_XISO "${PROJECT_NAME}.iso")
+set(BIN_DIR "/bin")
 endif()
 
 add_executable(${PROJECT_NAME}
@@ -72,6 +73,13 @@ target_link_libraries(${PROJECT_NAME}
   ${SDL2TTF_LIBRARIES}
   ${SDL2IMAGE_LIBRARIES}
 )
+
+file(GLOB RESOURCE_FILES
+  Resources/*
+)
+
+file(COPY ${RESOURCE_FILES} DESTINATION ${${PROJECT_NAME}_BINARY_DIR}${BIN_DIR})
+file(COPY_FILE sampleconfig.json ${${PROJECT_NAME}_BINARY_DIR}${BIN_DIR}/config.json)
 
 if(MSVC)
   target_compile_options(${PROJECT_NAME} PRIVATE /W4 /WX)
