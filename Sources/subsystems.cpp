@@ -2,6 +2,7 @@
 #include "infoLog.hpp"
 
 #ifdef NXDK
+#include <windows.h> // for MAX_PATH
 #include <hal/video.h>
 #include <hal/xbox.h>
 #include <nxdk/mount.h>
